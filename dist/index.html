@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Weather App</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/main.min.css" />
     <!--Font Awesome-->
     <link
       rel="stylesheet"
@@ -47,7 +49,7 @@
             <!--Only one icon will be displayed, the other hidden-->
             <i class="fas fa-search"></i>
             <!--Spins the search icon-->
-            <i class="fas fa-sync fa-spin"></i>
+            <i class="fas fa-sync fa-spin none"></i>
           </button>
         </form>
       </section>
@@ -81,7 +83,7 @@
           aria-label="Get the current weather conditions for your current location"
         >
           <i class="fas fa-map-marker-alt"></i>
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fas fa-sync fa-spin none"></i>
         </button>
         <button
           id="home"
@@ -90,7 +92,7 @@
           aria-label="Get the current weather conditions for your home location"
         >
           <i class="fas fa-home"></i>
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fas fa-sync fa-spin none"></i>
         </button>
         <button
           id="saveLocation"
@@ -99,7 +101,7 @@
           aria-label="Save the current location as your home location"
         >
           <i class="fas fa-save"></i>
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fas fa-sync fa-spin none"></i>
         </button>
         <button
           id="unit"
@@ -108,7 +110,7 @@
           aria-label="Toggle between metric and imperial measurement units"
         >
           <i class="fas fa-chart-bar"></i>
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fas fa-sync fa-spin none"></i>
         </button>
         <button
           id="refresh"
@@ -117,7 +119,7 @@
           aria-label="Refresh the current weather conditions"
         >
           <i class="fas fa-sync-alt"></i>
-          <i class="fas fa-sync fa-spin"></i>
+          <i class="fas fa-sync fa-spin none"></i>
         </button>
       </nav>
       <hr />
