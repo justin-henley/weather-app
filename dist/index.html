@@ -24,13 +24,17 @@
     />
   </head>
   <body>
-    <main>
-      <h1>Responsive Weather App Powered by the Open Weather A P I</h1>
+    <main class="fade-in">
+      <h1 class="offscreen">
+        Responsive Weather App Powered by the Open Weather A P I
+      </h1>
       <!--For screen readers-->
-      <section class="searchBar" id="searchBar">
+      <section class="searchBar fade-in" id="searchBar">
         <!--The search form-->
         <form id="searchBar__form" class="searchBar__form" role="search">
-          <label for="searchBar__text">Enter a new location</label>
+          <label for="searchBar__text" class="offscreen"
+            >Enter a new location</label
+          >
           <input
             id="searchBar__text"
             class="searchBar__text"
@@ -42,7 +46,7 @@
           />
           <button
             id="searchBar__button"
-            class="searchBar__button"
+            class="searchBar__button button"
             title="Submit Location"
             aria-label="Enter Zip Code or City, State, and Country to retrieve weather conditions"
           >
@@ -58,7 +62,7 @@
       >
       <!--Should only be visible when it has focus-->
       <section
-        class="currentForecast"
+        class="currentForecast fade-in"
         id="currentForecast"
         role="region"
         aria-labelledby="currentForecast__location"
@@ -71,11 +75,26 @@
           class="currentForecast__conditions"
         >
           <!--Populated dynamically-->
+          <!-- Sample data, remove later-->
+          <div class="icon" id="icon">
+            <i class="far fa-sun" aria-hidden="true" title="clear sky"></i>
+          </div>
+          <div class="temp">
+            59*
+            <div class="unit">F</div>
+          </div>
+          <div class="desc">Clear Sky</div>
+          <div class="feels">Feels like 53*</div>
+          <div class="maxTemp">High 62*</div>
+          <div class="minTemp">Low 39*</div>
+          <div class="humidity">Humidity 44%</div>
+          <div class="wind">Wind 7 mph</div>
+          <!-- End Sample Data-->
         </div>
       </section>
       <a href="#dailyForecast" class="skip-link">Skip to Six-Day Forecast</a>
       <!--Should only be visible when it has focus-->
-      <nav id="navButtons">
+      <nav id="navButtons" class="navButtons fade-in">
         <button
           id="getLocation"
           class="button"
@@ -122,18 +141,88 @@
           <i class="fas fa-sync fa-spin none"></i>
         </button>
       </nav>
-      <hr />
+      <hr class="fade-in" />
       <section
-        class="dailyForecast"
+        class="dailyForecast fade-in"
         id="dailyForecast"
         role="region"
         aria-labelledby="dailyForecast__title"
       >
-        <h2 id="dailyForecast__title" class="dailyForecast__title">
+        <h2 id="dailyForecast__title" class="dailyForecast__title offscreen">
           Six Day Forecast
         </h2>
         <div id="dailyForecast__contents" class="dailyForecast__contents">
           <!--Populated dynamically-->
+          <!--Sample data-->
+          <div class="forecastDay">
+            <p class="dayAbbreviation">SUN</p>
+            <img
+              src="https://openweathermap.org/img/wn/03d.png"
+              alt="scattered clouds"
+            />
+            <p class="dayHigh">61*</p>
+            <p class="dayLow">46*</p>
+          </div>
+
+          <div class="forecastDay">
+            <p class="dayAbbreviation">MON</p>
+            <img
+              src="https://openweathermap.org/img/wn/03d.png"
+              alt="scattered clouds"
+            />
+            <p class="dayHigh">10*</p>
+            <p class="dayLow">01*</p>
+          </div>
+
+          <div class="forecastDay">
+            <p class="dayAbbreviation">SUN</p>
+            <img
+              src="https://openweathermap.org/img/wn/03d.png"
+              alt="scattered clouds"
+            />
+            <p class="dayHigh">61*</p>
+            <p class="dayLow">46*</p>
+          </div>
+
+          <div class="forecastDay">
+            <p class="dayAbbreviation">SUN</p>
+            <img
+              src="https://openweathermap.org/img/wn/03d.png"
+              alt="scattered clouds"
+            />
+            <p class="dayHigh">61*</p>
+            <p class="dayLow">46*</p>
+          </div>
+
+          <div class="forecastDay">
+            <p class="dayAbbreviation">SUN</p>
+            <img
+              src="https://openweathermap.org/img/wn/03d.png"
+              alt="scattered clouds"
+            />
+            <p class="dayHigh">61*</p>
+            <p class="dayLow">46*</p>
+          </div>
+
+          <div class="forecastDay">
+            <p class="dayAbbreviation">SUN</p>
+            <img
+              src="https://openweathermap.org/img/wn/03d.png"
+              alt="scattered clouds"
+            />
+            <p class="dayHigh">61*</p>
+            <p class="dayLow">46*</p>
+          </div>
+          <div class="forecastDay">
+            <p class="dayAbbreviation">SUN</p>
+            <img
+              src="https://openweathermap.org/img/wn/03d.png"
+              alt="scattered clouds"
+            />
+            <p class="dayHigh">61*</p>
+            <p class="dayLow">46*</p>
+          </div>
+          <!--End sample data-->
         </div>
       </section>
       <!--Announces status to screen readers-->
