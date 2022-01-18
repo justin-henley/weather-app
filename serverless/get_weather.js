@@ -1,6 +1,8 @@
 // This function serves as a Node relay.  It takes the rewuest from the front end, makes the request in the backend with the API key stored on Netlify, and passes the results to the front end.  Allows hiding of the API key.
 
-const fetch = require("node-fetch");
+//const fetch = import("node-fetch");
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 const { WEATHER_API_KEY } = process.env;
 
@@ -16,7 +18,8 @@ exports.handler = async (event, context) => {
       statusCode: 200,
       body: JSON.stringify(weatherJson),
     };
-  } catch (e) {
+  } catch (err) {
+    console.log(err);
     return {
       statusCode: 422,
       body: err.stack,
