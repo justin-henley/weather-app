@@ -1,4 +1,4 @@
-const WEATHER_API_KEY = "c17172d95b13928e1b24c6fab62292dc";
+//const WEATHER_API_KEY = deleted for security, switched to serverless function with new key;
 
 export const setLocationObject = (locationObj, coordsObj) => {
   const { lat, long, name, unit } = coordsObj;
@@ -44,7 +44,7 @@ export const getCoordsFromApi = async (entryText, units) => {
   try {
     const dataStream = await fetch(encodedUrl);
     const jsonData = await dataStream.json();
-    console.log(dataStream, jsonData);
+    //console.log(dataStream, jsonData);
     return jsonData;
   } catch (error) {
     console.error(error.stack);

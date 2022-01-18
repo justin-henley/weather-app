@@ -69,8 +69,8 @@ const geoSuccess = (position) => {
 
   // set location object
   setLocationObject(currentLoc, myCoordsObj);
-  console.log(myCoordsObj);
-  console.log(currentLoc);
+  //console.log(myCoordsObj);
+  //console.log(currentLoc);
   // update data and display
   updateDataAndDisplay(currentLoc);
 };
@@ -110,7 +110,7 @@ const saveLocation = () => {
   if (currentLoc.lat && currentLoc.long) {
     const saveIcon = document.querySelector(".fa-save");
     addSpinner(saveIcon);
-    console.log("Saved location: \n", JSON.stringify(currentLoc));
+    //console.log("Saved location: \n", JSON.stringify(currentLoc));
     localStorage.setItem("defaultWeatherLocation", JSON.stringify(currentLoc));
     updateScreenReaderConfirmation(
       `Saved ${currentLoc.name} as home location.`
@@ -122,7 +122,7 @@ const setUnitPref = () => {
   const unitIcon = document.querySelector(".fa-chart-bar");
   addSpinner(unitIcon);
   currentLoc.toggleUnit();
-  console.log(currentLoc);
+  //console.log(currentLoc);
   updateDataAndDisplay(currentLoc);
 };
 
@@ -180,6 +180,6 @@ const submitNewLocation = async (event) => {
 
 const updateDataAndDisplay = async (locationObj) => {
   const weatherJson = await getWeatherFromCoords(locationObj);
-  console.log(weatherJson);
+  //console.log(weatherJson);
   if (weatherJson) updateDisplay(weatherJson, locationObj);
 };
