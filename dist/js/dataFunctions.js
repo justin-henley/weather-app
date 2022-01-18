@@ -21,7 +21,7 @@ export const cleanText = (text) => {
 };
 
 export const getWeatherFromCoords = async (locationObj) => {
-  const lat = locationObj.lat;
+  /* const lat = locationObj.lat;
   const long = locationObj.long;
   const units = locationObj.unit;
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly,alerts&units=${units}&appid=${WEATHER_API_KEY}`;
@@ -33,11 +33,28 @@ export const getWeatherFromCoords = async (locationObj) => {
     return weatherJson;
   } catch (error) {
     console.error(error);
+  } */
+
+  const urlDataObject = {
+    lat: locationObj.lat,
+    long: locationObj.long,
+    units: locationObj.unit,
+  };
+
+  try {
+    const weatherStream = await fetch("./.netlify/functions/get_weather", {
+      method: "POST",
+      body: JSON.stringify(urlDataObject),
+    });
+    const weatherJson = await weatherStream.json();
+    return weatherJson;
+  } catch (error) {
+    console.error(error);
   }
 };
 
 export const getCoordsFromApi = async (entryText, units) => {
-  const regex = /^\d+$/g;
+  /*  const regex = /^\d+$/g;
   const flag = regex.test(entryText) ? "zip" : "q";
   const url = `https://api.openweathermap.org/data/2.5/weather?${flag}=${entryText}&units=${units}&appid=${WEATHER_API_KEY}`;
   const encodedUrl = encodeURI(url);
@@ -48,5 +65,21 @@ export const getCoordsFromApi = async (entryText, units) => {
     return jsonData;
   } catch (error) {
     console.error(error.stack);
+  } */
+
+  const urlDataObj = {
+    text: entryText,
+    units: units,
+  };
+
+  try {
+    const dataStream = await fetch("./.netlify/functions/get_coords", {
+      method: "POST",
+      body: JSON.stringify(urlDataObj),
+    });
+    const jsonData = await dataStream.json();
+    return jsonData;
+  } catch (e) {
+    console.error(e);
   }
 };
