@@ -1,4 +1,4 @@
-// This function serves as a Node relay.  It takes the rewuest from the front end, makes the request in the backend with the API key stored on Netlify, and passes the results to the front end.  Allows hiding of the API key.
+// This function serves as a Node relay.  It takes the request from the front end, makes the request in the backend with the API key stored on Netlify, and passes the results to the front end.  Allows hiding of the API key.
 
 //const fetch = import("node-fetch");
 const fetch = (...args) =>
