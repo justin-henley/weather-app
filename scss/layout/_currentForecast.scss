@@ -65,12 +65,15 @@
 
     .maxTemp {
       @include flexCenter;
+      display: flex;
+
       grid-row: 2 / span 1;
       grid-column: 3 / span 2;
     }
 
     .minTemp {
       @include flexCenter;
+      display: flex;
       align-self: start;
       grid-row: 3 / span 1;
       grid-column: 3 / span 2;
